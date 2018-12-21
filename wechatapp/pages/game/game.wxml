@@ -1,0 +1,19 @@
+<!--pages/game/game.wxml-->
+<view class="page">
+    <view class="section">
+        <button bindtap="newGame">初始化</button>
+    </view>
+    <view class="section">
+        <view wx:for="{{grids}}" class="grid">
+            <view wx:for="{{item}}" class="grid_cell" style="height:{{height}}rpx;">
+                <view bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindtap="handleClick" id="{{item}}" class="card {{cards[item].open?'open':''}}">
+                    <view wx:if="{{cards[item].open}}"></view>
+                    <view wx:else>
+                        <text wx:if="{{cards[item].flag}}" class="iconfont icon-qizhi" style="color:red"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<text>点击格子设置目的地，长按格子设置障碍物</text>

@@ -1,0 +1,12 @@
+<!--pages/setting/setting.wxml-->
+<view class="page">
+    <view class="section">
+        <text>横向格子</text>
+        <input type="number" value="{{x}}" bindinput="handleInputX" />
+    </view>
+    <view class="section">
+        <text>纵向格子</text>
+        <input type="number" value="{{y}}" bindinput="handleInputY" />
+    </view>
+    <button bindtap="handleSave">确定</button>
+</view>

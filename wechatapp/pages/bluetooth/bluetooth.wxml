@@ -1,0 +1,17 @@
+<button bindtap="open_BLE">打開藍牙</button>
+<button bindtap="search_BLE">{{searchingstatus?"搜索中":"搜索蓝牙"}}</button>
+<block wx:for="{{list}}" wx:key="deviceId">
+  <view class="section" style="flex-direction:row;">
+    <view>
+      <text>{{index}}:</text>
+      <text>设备名称:  {{item.name}}\n</text>
+      <text>MAC地址:   {{item.deviceId}}</text>
+    </view>
+    <view class="connection">
+      <button id="{{item.deviceId}}" size="mini" bindtap="connectTO">
+        {{deviceconnected?"已连接":"连接"}}
+      </button>
+    </view>
+  </view>
+</block>
+<button bindtap="sendtheroad">發送路徑</button>
